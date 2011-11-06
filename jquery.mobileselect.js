@@ -15,7 +15,8 @@
     deviceWidth: 480
   }
 	var methods = {
-		init : function(defaults) {
+		init : function(options) {
+		  var options = $.extend(defaults, options);
       console.log(defaults);
 			// we'll use the width of the device, because we stopped browsersniffing
 			// a long time ago. Anyway, we want to target _every_ small display
