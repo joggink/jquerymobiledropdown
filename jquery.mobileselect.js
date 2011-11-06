@@ -10,11 +10,17 @@
 **/
 
 (function($){
+  // group defaults together in object
+  var defaults = {
+    deviceWidth: 480
+  }
 	var methods = {
-		init : function() {
+		init : function(options) {
+		  var options = $.extend(defaults, options);
+      console.log(defaults);
 			// we'll use the width of the device, because we stopped browsersniffing
 			// a long time ago. Anyway, we want to target _every_ small display
-			if (screen.width < 480){
+			if (screen.width < defaults.deviceWidth){
 				var _o = $(this), // store the jqyuery object once
 						_p = _o.parent(), // get the parent node
 						_s = $("<select />"); // create a filthy select
