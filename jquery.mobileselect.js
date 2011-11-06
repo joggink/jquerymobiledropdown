@@ -12,7 +12,8 @@
 (function($){
   // group defaults together in object
   var defaults = {
-    deviceWidth: 480
+    deviceWidth: 480,
+    autoHide: true
   }
 	var methods = {
 		init : function(options) {
@@ -48,7 +49,9 @@
 						}).appendTo(_s);
 					});
 					// hide the navigation ul
-					$(_o).hide();
+					if (defaults.autoHide){
+					  $(_o).hide(); 
+					}
 					// now make it work :-)
 					_s.change(function() {
 					  window.location = $(this).find("option:selected").val();
