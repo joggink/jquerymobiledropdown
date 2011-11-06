@@ -22,6 +22,18 @@ To use it:
   
     })
 
+You can optionally change these default parameters:
+
+		$(document).ready(function(){
+
+		  // your navigation ul selector
+		  $('#nav-main ul').mobileSelect({
+				deviceWidth: 480,
+      	autoHide: true	
+			});
+			
+		})
+
 And that's it that's all.
 
 However...
