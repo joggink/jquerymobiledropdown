@@ -29,5 +29,4 @@ However...
 
 There are still some things that need to be taken care of:
 
-*  pass the screen.width as a parameter
 *  create a before / after hook so we can fix some things euhm... before and after I suppose
