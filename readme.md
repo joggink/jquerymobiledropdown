@@ -29,7 +29,7 @@ You can optionally change these default parameters:
 		  // your navigation ul selector
 		  $('#nav-main ul').mobileSelect({
 				deviceWidth: 480,
-      	autoHide: true	
+				autoHide: true	
 			});
 			
 		})
