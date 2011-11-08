@@ -5,7 +5,7 @@ What's it all about?
 --------------------
 
 It's simple as abc. If you have some kind of navigation that you want to replace with 
-a dropdown for mobile devices (read: screenwidth less than 400 pixels) then you've 
+a dropdown for mobile devices (read: screenwidth less than 480 pixels) then you've
 found what you're looking for.
 
 How to use?
@@ -15,24 +15,29 @@ Download the jquery.mobileselect.js. Removing comments and minifying it will get
 
 To use it:
 
-    $(document).ready(function(){
+``` javascript
+$(document).ready(function(){
   
-      // your navigation ul selector
-      $('#nav-main ul').mobileSelect();
-  
-    })
+  // your navigation ul selector
+  $('#nav-main ul').mobileSelect();
+
+})
+```
 
 You can optionally change these default parameters:
 
-		$(document).ready(function(){
+``` javascript
+$(document).ready(function(){
 
-		  // your navigation ul selector
-		  $('#nav-main ul').mobileSelect({
-				deviceWidth: 480,
-				autoHide: true	
-			});
-			
-		})
+  // your navigation ul selector
+  $('#nav-main ul').mobileSelect({
+    autoHide: true, // Hide the ul automatically
+    defaultOption: "Go to...", // The default select option
+    deviceWidth: 480 // The select will be added for screensizes smaller than this
+  });
+
+})
+```
 
 And that's it that's all.
 
