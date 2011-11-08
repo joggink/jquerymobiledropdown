@@ -12,8 +12,9 @@
 (function($){
   // group defaults together in object
   var defaults = {
-    deviceWidth: 480,
-    autoHide: true
+    autoHide: true,
+    defaultOption: "Go to...",
+    deviceWidth: 480
   }
 	var methods = {
 		init : function(options) {
@@ -34,7 +35,7 @@
 					$("<option />", {
 					   "selected": gs,
 					   "value"   : "",
-					   "text"    : "Go to..."
+					   "text"    : options.defaultOption
 					}).appendTo(_s);
 				
 					// Populate the dropdown with menu items. If there is an li.current we'll 
