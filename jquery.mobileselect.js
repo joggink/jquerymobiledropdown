@@ -29,7 +29,7 @@
 					_s.appendTo(_p); // append it to the parent
 
 					$("<option />", {
-						 "selected": (!$('.current', _o).length) ? 'selected' : '',
+						 "selected": (!$('.current', _o).length) ? 'selected' : false,
 						 "value": "",
 						 "text": options.defaultOption
 					}).appendTo(_s);
@@ -38,7 +38,7 @@
 					// make this one selected
 					$('a', _o).each(function() {
 						var el = $(this),
-						sl = el.parent('li').hasClass('current') ? 'selected' : '';
+						sl = el.parent('li').hasClass('current') ? 'selected' : false;
 						$("<option />", {
 							"selected": sl,
 							"value": el.attr("href"),
