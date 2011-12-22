@@ -4,6 +4,8 @@
  * @Author URI: http://builtbyrobot.com
  *
  * @TODO:
- *			- create a before / after hook so we can fix some things euhm... before and 
+ *			- create a before / after hook so we can fix some things euhm... before and
  *				after I suppose
-**/(function(a){"use strict";var b={init:function(b){var c=a.extend({autoHide:!0,defaultOption:"Go to...",deviceWidth:480},b);if(screen.width<c.deviceWidth){var d=a(this),e=d.parent(),f=a("<select />");f.appendTo(e);a("<option />",{selected:a(".current",d).length?"":"selected",value:"",text:c.defaultOption}).appendTo(f);a("a",d).each(function(){var b=a(this),c=b.parent("li").hasClass("current")?"selected":"";a("<option />",{selected:c,value:b.attr("href"),text:b.text()}).appendTo(f)});c.autoHide&&a(d).hide();f.change(function(){window.location=a(this).find("option:selected").val()})}}};a.fn.mobileSelect=function(c){if(b[c])return b[c].apply(this,Array.prototype.slice.call(arguments,1));if(typeof c=="object"||!c)return b.init.apply(this,arguments);a.error("Method "+c+" does not exist on jQuery.mobileselect")}})(this.jQuery);
+**/
+(function(b){var c={init:function(a){a=b.extend({autoHide:!0,defaultOption:"Go to...",deviceWidth:480,appendTo:"",className:"mobileselect",useWindowWidth:!1},a);if((a.useWindowWidth===!0?b(window).width():screen.width)<a.deviceWidth){var d=b(this),c=a.appendTo.length?b(a.appendTo):d.parent(),e=b('<select class="'+a.className+'" />');e.appendTo(c);b("<option />",{selected:!b(".current",d).length?"selected":!1,value:"",text:a.defaultOption}).appendTo(e);b("a",d).each(function(){var a=b(this),c=a.parent("li").hasClass("current")||
+a.hasClass("current")?"selected":!1;b("<option />",{selected:c,value:a.attr("href"),text:a.text()}).appendTo(e)});a.autoHide&&b(d).hide();e.change(function(){window.location=b(this).find("option:selected").val()})}}};b.fn.mobileSelect=function(a){if(c[a])return c[a].apply(this,Array.prototype.slice.call(arguments,1));else if(typeof a==="object"||!a)return c.init.apply(this,arguments);else b.error("Method "+a+" does not exist on jQuery.mobileselect")}})(this.jQuery);
