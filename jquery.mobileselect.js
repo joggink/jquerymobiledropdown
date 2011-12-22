@@ -18,11 +18,13 @@
 				defaultOption: "Go to...",
 				deviceWidth: 480,
 				appendTo: '',
-				className: 'mobileselect'
+				className: 'mobileselect',
+				useWindowWidth: false
 			}, config);
 			// we'll use the width of the device, because we stopped browsersniffing
 			// a long time ago. Anyway, we want to target _every_ small display
-			if (screen.width < options.deviceWidth){
+			var width = (options.useWindowWidth === true) ? $(window).width() : screen.width;
+			if (width < options.deviceWidth){
 				var _o = $(this), // store the jqyuery object once
 						_p = (options.appendTo.length) ? $(options.appendTo) : _o.parent(), // get the parent node
 						_s = $("<select class=\""+ options.className +"\" />"); // create a filthy select
