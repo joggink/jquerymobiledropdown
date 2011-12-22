@@ -40,7 +40,7 @@
 					// make this one selected
 					$('a', _o).each(function() {
 						var el = $(this),
-						sl = el.parent('li').hasClass('current') ? 'selected' : false;
+						sl = ( el.parent('li').hasClass('current') || el.hasClass('current') ) ? 'selected' : false;
 						$("<option />", {
 							"selected": sl,
 							"value": el.attr("href"),
