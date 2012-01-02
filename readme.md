@@ -4,7 +4,7 @@ jQuery mobile select
 What's it all about?
 --------------------
 
-It's simple as abc. If you have some kind of navigation that you want to replace with 
+It's simple as abc. If you have some kind of navigation that you want to replace with
 a dropdown for mobile devices (read: screenwidth less than 480 pixels) then you've
 found what you're looking for.
 
@@ -17,7 +17,7 @@ To use it:
 
 ``` javascript
 $(document).ready(function(){
-  
+
   // your navigation ul selector
   $('#nav-main ul').mobileSelect();
 
@@ -33,7 +33,10 @@ $(document).ready(function(){
   $('#nav-main ul').mobileSelect({
     autoHide: true, // Hide the ul automatically
     defaultOption: "Go to...", // The default select option
-    deviceWidth: 480 // The select will be added for screensizes smaller than this
+    deviceWidth: 480, // The select will be added for screensizes smaller than this
+    appendTo: '#mycustomloc', // Used to place the drop-down in some location other than where the primary nav exists
+    className: 'mobileselect', // The class name applied to the select element
+    useWindowWidth: false // Use the width of the window instead of the width of the screen
   });
 
 })
